@@ -7,22 +7,13 @@ const PlayGame = (props) =>{
     const[sIncr, setSIncr] = useState(0);
     //const {firstName, secondName} = useParams();
     const handleOnClickOne = () =>{
-        setFIncr(fIncr+1);
+        setFIncr(fIncr+1);      
     }
     const handleOnClickTwo = () =>{
         setSIncr(sIncr+1);
     }
     const {params} = props.location;
 
-    if(!params){
-        <h6> Enter Name</h6>
-        props.history.push({
-            pathname : '/'
-        });
-        
-        return null ;
-    }
-        
      return(
         <>
 

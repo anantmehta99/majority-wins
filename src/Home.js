@@ -48,30 +48,25 @@ const Home = (props) =>{
     return(
         <>
         <div className="main_div">
-        
-           <div className="center_div"> 
-        <form onSubmit={handleOnSubmit}>
-            <label>First Player Name:<br/></label>
-            <input
-            type="text"
-            name="first"
-            value={playerName.first}
-            onChange={handleOnChange}></input>
-            <label><br/>Second Player Name:<br/></label>
-            <input
-            type="text"
-            name="second"
-            value={playerName.second}
-            onChange={handleOnChange}></input>
-            <br/>
-            
-            <Button type="submit">Continue</Button>
-           
-
-        </form>
+            <div className="center_div"> 
+                <form onSubmit={handleOnSubmit}>
+                    <label>First Player Name:<br/></label>
+                    <input
+                    type="text"
+                    name="first"
+                    value={playerName.first}
+                    onChange={handleOnChange}></input>
+                    <label><br/>Second Player Name:<br/></label>
+                    <input
+                    type="text"
+                    name="second"
+                    value={playerName.second}
+                    onChange={handleOnChange}></input>
+                    <br/>
+                    <Button type="submit">Continue</Button>
+                </form>
             </div>
-            </div>
-        
+        </div>
         </>
     );
 }

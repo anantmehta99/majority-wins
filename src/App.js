@@ -5,12 +5,12 @@ import PlayGame from './PlayGame';
 
 
 const App = () => {
-  return(
+  return (
     <>
-    <Switch>
-      <Route exact path = '/' component={Home}/>
-      <Route exact path = '/playgame' component={PlayGame}/>
-    </Switch>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/playgame' component={PlayGame} />
+      </Switch>
     </>
   );
 

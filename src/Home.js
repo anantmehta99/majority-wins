@@ -1,77 +1,76 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 
-const Home = (props) =>{
-     
-    // const [name, setFunction] = useState();
+const Home = (props) => {
 
-    const[playerName, setPlayerName] = useState({     
-            
-        first:'',
-        second:''
+
+    const [playerName, setPlayerName] = useState({
+        first: '',
+        second: ''
     });
 
-    const handleOnChange = (event) =>{                  //function handleOnChange(event){}
-        const name= event.target.name;                 // name = first
-        const value= event.target.value;            // Vlaue : 'M' 'Anant'
+    const handleOnChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
 
-        setPlayerName((previous)=>{
-            if(name==='first'){
-                return{
-                    first : value,
-                    second : previous.second
-                } 
-            } else if(name==='second'){
-                return{
-                    first:previous.first,
-                    second:value
+        setPlayerName((previous) => {
+            if (name === 'first') {
+                return {
+                    first: value,
+                    second: previous.second
+                }
+            } else if (name === 'second') {
+                return {
+                    first: previous.first,
+                    second: value
                 }
             }
         });
-        
+
     }
 
-    const handleOnSubmit = (event) =>{
+    const handleOnSubmit = (event) => {
         event.preventDefault();
-        if(playerName.first.trim() && playerName.second.trim()){
-    
-                 
-                props.history.push({
+        if (playerName.first.trim() && playerName.second.trim()) {
+
+
+            props.history.push({
                 pathname: 'PlayGame',
-                params : {
-                    first : playerName.first,
-                   second : playerName.second,
+                params: {
+                    first: playerName.first,
+                    second: playerName.second,
 
                 }
 
             })
-            }  
+        }
         else {
             alert('Enter Name');
-        } 
+        }
     }
-    return(
+    return (
         <>
-        <div className="main_div">
-            <div className="center_div"> 
-                <form onSubmit={handleOnSubmit}>
-                    <label>First Player Name:<br/></label>
-                    <input
-                    type="text"
-                    name="first"
-                    value={playerName.first}
-                    onChange={handleOnChange}></input>
-                    <label><br/>Second Player Name:<br/></label>
-                    <input
-                    type="text"
-                    name="second"
-                    value={playerName.second}
-                    onChange={handleOnChange}></input>
-                    <br/>
-                    <Button type="submit">Continue</Button>
-                </form>
+            <div className="main_div">
+                <div className="center_div">
+                    <form onSubmit={handleOnSubmit}>
+                        <label>First Player Name:<br /></label>
+                        <input
+                            type="text"
+                            name="first"
+                            value={playerName.first}
+                            onChange={handleOnChange}></input>
+                        <label><br />Second Player Name:<br /></label>
+                        <input
+                            type="text"
+                            name="second"
+                            value={playerName.second}
+
+                            onChange={handleOnChange}></input>
+                        <br />
+                        <Button type="submit">Continue</Button>
+                    </form>
+                </div>
             </div>
-        </div>
         </>
     );
 }

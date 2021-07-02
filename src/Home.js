@@ -2,15 +2,18 @@ import React, {  useState } from 'react';
 import { Button } from '@material-ui/core';
 
 const Home = (props) =>{
+     
+    // const [name, setFunction] = useState();
 
-    const[playerName, setPlayerName] = useState({
+    const[playerName, setPlayerName] = useState({     
+            
         first:'',
         second:''
     });
 
-    const handleOnChange = (event) =>{
-        const name= event.target.name;
-        const value= event.target.value;
+    const handleOnChange = (event) =>{                  //function handleOnChange(event){}
+        const name= event.target.name;                 // name = first
+        const value= event.target.value;            // Vlaue : 'M' 'Anant'
 
         setPlayerName((previous)=>{
             if(name==='first'){
@@ -30,8 +33,10 @@ const Home = (props) =>{
 
     const handleOnSubmit = (event) =>{
         event.preventDefault();
-        if(playerName.first.length && playerName.second.length){
-            props.history.push({
+        if(playerName.first.trim() && playerName.second.trim()){
+    
+                 
+                props.history.push({
                 pathname: 'PlayGame',
                 params : {
                     first : playerName.first,
@@ -40,10 +45,10 @@ const Home = (props) =>{
                 }
 
             })
-        }
-        else{
-            alert('Please Enter Name');
-        }
+            }  
+        else {
+            alert('Enter Name');
+        } 
     }
     return(
         <>

@@ -4,7 +4,7 @@ import Home from './Home';
 import PlayGame from './PlayGame';
 
 
-const App = () =>{
+const App = () => {
   return(
     <>
     <Switch>
